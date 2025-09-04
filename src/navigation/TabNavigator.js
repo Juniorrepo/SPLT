@@ -11,6 +11,7 @@ import { useState } from "react";
 import { View } from "react-native";
 import DrawerMenu from "../components/common/DrawerMenu";
 import HomeStack from "./HomeStack";
+import {useNavigation} from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +19,7 @@ export default function TabNavigator() {
   const [isDrawerVisible, setDrawerVisible] = useState(false);
 
   const toggleDrawer = () => setDrawerVisible((prev) => !prev);
+  const navigation = useNavigation();
   return (
     <View style={{ flex: 1 }}>
       <Tab.Navigator
@@ -90,7 +92,12 @@ export default function TabNavigator() {
           options={{ headerShown: false }}
         />
       </Tab.Navigator>
-      {isDrawerVisible && <DrawerMenu onClose={toggleDrawer} />}
+        {isDrawerVisible && (
+            <DrawerMenu
+                onClose={() => setDrawerVisible(false)}
+                navigation={navigation}
+            />
+        )}
     </View>
 
   );

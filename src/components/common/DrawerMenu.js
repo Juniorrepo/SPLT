@@ -27,22 +27,7 @@ import theme from "../../constants/theme";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
-const menuItems = [
-    { label: "Account", icon: <Ionicons name="person-outline" size={20} color="white" /> },
-    { label: "Messages", icon: <Ionicons name="chatbubble-ellipses-outline" size={20} color="white" /> },
-    { label: "Groups", icon: <Ionicons name="people-outline" size={20} color="white" /> },
-    { label: "Addresses", icon: <Feather name="map-pin" size={20} color="white" /> },
-    { label: "Payment Cards", icon: <Feather name="credit-card" size={20} color="white" /> },
-    { label: "Orders", icon: <Feather name="box" size={20} color="white" /> },
-    { label: "Goals & Achievements", icon: <SimpleLineIcons name="trophy" size={20} color="white" /> },
-    { label: "Trainers", icon: <MaterialCommunityIcons name="arm-flex-outline" size={20} color="white" /> },
-    { label: "Loyalty Points", icon: <Feather name="star" size={20} color="white" /> },
-    { label: "Settings", icon: <Feather name="settings" size={20} color="white" /> },
-    { label: "Contact Us", icon: <Feather name="phone" size={20} color="white" /> },
-    { label: "Terms & Conditions", icon: <Feather name="file-text" size={20} color="white" /> },
-];
-
-const DrawerMenu = ({ onClose }) => {
+const DrawerMenu = ({ onClose, navigation }) => {
     const translateX = useSharedValue(-SCREEN_WIDTH);
 
     useEffect(() => {
@@ -61,6 +46,35 @@ const DrawerMenu = ({ onClose }) => {
         });
     };
 
+    const menuItems = [
+        { label: "Account", icon: <Ionicons name="person-outline" size={20} color="white" /> },
+        {
+            label: "Messages",
+            icon: <Ionicons name="chatbubble-ellipses-outline" size={20} color="white" />,
+            onPress: () => {
+                onClose();
+                navigation.navigate('ChatInterface');
+            }
+        },
+        {
+            label: "Groups",
+            icon: <Ionicons name="people-outline" size={20} color="white" />,
+            onPress: () => {
+                onClose();
+                navigation.navigate('Groups');
+            }
+        },
+        { label: "Addresses", icon: <Feather name="map-pin" size={20} color="white" /> },
+        { label: "Payment Cards", icon: <Feather name="credit-card" size={20} color="white" /> },
+        { label: "Orders", icon: <Feather name="box" size={20} color="white" /> },
+        { label: "Goals & Achievements", icon: <SimpleLineIcons name="trophy" size={20} color="white" /> },
+        { label: "Trainers", icon: <MaterialCommunityIcons name="arm-flex-outline" size={20} color="white" /> },
+        { label: "Loyalty Points", icon: <Feather name="star" size={20} color="white" /> },
+        { label: "Settings", icon: <Feather name="settings" size={20} color="white" /> },
+        { label: "Contact Us", icon: <Feather name="phone" size={20} color="white" /> },
+        { label: "Terms & Conditions", icon: <Feather name="file-text" size={20} color="white" /> },
+    ];
+
     return (
         <View style={styles.overlay}>
             <Animated.View style={[styles.container, animatedStyle]}>
@@ -76,7 +90,11 @@ const DrawerMenu = ({ onClose }) => {
 
                 <ScrollView contentContainerStyle={styles.scrollContainer}>
                     {menuItems.map((item, index) => (
-                        <TouchableOpacity key={index} style={styles.menuItem}>
+                        <TouchableOpacity
+                            key={index}
+                            style={styles.menuItem}
+                            onPress={item.onPress}
+                        >
                             {item.icon}
                             <Text style={styles.menuText}>{item.label}</Text>
                         </TouchableOpacity>
