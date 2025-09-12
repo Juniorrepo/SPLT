@@ -1,0 +1,22 @@
+<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- gradient definition -->
+    <defs>
+        <linearGradient id="grad" x1="0" y1="16.5" x2="33" y2="16.5" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#B57FE6"/>
+            <stop offset="1" stop-color="#6645AB"/>
+        </linearGradient>
+    </defs>
+
+    <!-- strokes now use the gradient -->
+    <path d="M30.75 7.9502C30.75 9.3752 29.325 12.2252 23.625 12.2252C17.925 12.2252 16.5 9.3752 16.5 7.9502C16.5 9.3752 15.075 12.2252 9.375 12.2252C3.675 12.2252 2.25 9.3752 2.25 7.9502"
+          stroke="url(#grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M13.65 4.3875C13.175 3.675 11.5125 2.25 9.375 2.25M19.35 4.3875C19.825 3.675 21.4875 2.25 23.625 2.25"
+          stroke="url(#grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M5.09961 12.2251V13.6501C5.09961 15.5315 5.4787 17.3832 5.89773 19.2068C6.66626 22.5513 7.05091 27.3024 5.09961 30.7501M27.8996 12.2251V13.6501C27.8996 15.5315 27.5205 17.3832 27.1015 19.2068C26.333 22.5513 25.9483 27.3024 27.8996 30.7501"
+          stroke="url(#grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M22.2008 26.4751C20.0847 28.1552 18.8434 28.426 16.9609 26.8775C16.6897 26.6544 16.2987 26.6389 16.0153 26.8464C14.0273 28.3018 12.795 28.3149 10.8008 26.4751"
+          stroke="url(#grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M22.2008 19.3501C20.0847 21.0302 18.8434 21.301 16.9609 19.7525C16.6897 19.5294 16.2987 19.5139 16.0153 19.7214C14.0273 21.1768 12.795 21.1899 10.8008 19.3501"
+          stroke="url(#grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M16.5 19.35V16.5" stroke="url(#grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

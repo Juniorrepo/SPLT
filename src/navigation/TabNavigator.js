@@ -12,6 +12,7 @@ import { View } from "react-native";
 import DrawerMenu from "../components/common/DrawerMenu";
 import HomeStack from "./HomeStack";
 import {useNavigation} from "@react-navigation/native";
+import ProfileScreen from "../screens/Profile/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -88,7 +89,7 @@ export default function TabNavigator() {
 
         <Tab.Screen
           name="Profile"
-          component={ProfileStack}
+          component={ProfileScreen}
           options={{ headerShown: false }}
         />
       </Tab.Navigator>
